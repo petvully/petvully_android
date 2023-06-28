@@ -1,9 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Petvully" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="colorOnPrimary">@color/color_on_primary</item>
 
-    <style name="Theme.Petvully" parent="Base.Theme.Petvully" />
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
 </resources>
