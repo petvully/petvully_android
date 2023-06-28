@@ -6,6 +6,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.e1i4.petvully.R
 import org.e1i4.petvully.base.BaseActivity
 import org.e1i4.petvully.databinding.ActivityMainBinding
+import org.e1i4.petvully.view.main.home.HomeFragment
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {

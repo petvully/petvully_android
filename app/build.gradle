@@ -43,6 +43,7 @@ dependencies {
     def lifecycleVersion = "2.6.1"
     def pagingVersion = "3.1.1"
     def retrofitVersion = "2.9.0"
+    def glideVersion = "4.15.1"
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -79,4 +80,8 @@ dependencies {
     implementation "com.google.code.gson:gson:$retrofitVersion"
     // logging
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+
+    // glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+
 }
