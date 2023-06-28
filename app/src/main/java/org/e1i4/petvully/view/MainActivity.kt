@@ -1,12 +1,9 @@
 package org.e1i4.petvully.view
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import org.e1i4.petvully.R
+import dagger.hilt.android.AndroidEntryPoint
+import org.e1i4.petvully.base.BaseActivity
+import org.e1i4.petvully.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 }
