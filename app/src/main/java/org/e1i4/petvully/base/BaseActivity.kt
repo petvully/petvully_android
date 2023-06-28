@@ -22,6 +22,7 @@ abstract class BaseActivity<T : ViewBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = bindingInflater(layoutInflater)
+        setContentView(binding.root)
     }
 
     protected fun setOnClickListeners(vararg views: View) {
