@@ -16,6 +16,7 @@ import org.e1i4.petvully.databinding.FragmentAdoptionBinding
 import org.e1i4.petvully.view.SettingActivity
 import org.e1i4.petvully.view.adapter.PetSoonAdapter
 import org.e1i4.petvully.view.adapter.PetWaitingAdapter
+import org.e1i4.petvully.view.message.MessageActivity
 import org.e1i4.petvully.view.sign.SignInActivity
 
 @AndroidEntryPoint
@@ -75,6 +76,15 @@ class AdoptionFragment: BaseFragment<FragmentAdoptionBinding>(FragmentAdoptionBi
 
         binding.icMenu.setOnClickListener {
             startActivity(Intent(context, SettingActivity::class.java))
+        }
+
+        binding.icHeart.setOnClickListener {
+            startActivity(Intent(context, MessageActivity::class.java))
+        }
+
+        binding.icBack.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.remove(this)?.commit()
         }
     }
 }
