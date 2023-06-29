@@ -11,6 +11,7 @@
     <color name="color_text_primary">#DE000000</color>
     <color name="color_text_secondary">#99000000</color>
     <color name="color_text_tertiary">#55000000</color>
+    <color name="color_text_black">#313131</color>
 
     <!-- common -->
     <color name="black">#FF000000</color>
@@ -18,5 +19,9 @@
     <color name="transparent">#00000000</color>
     <color name="dark_gray">#DCDCDC</color>
     <color name="light_gray">#FAF8F8</color>
+    <color name="light_gray2">#D6D6D6</color>
+    <color name="light_gray3">#C4C4C4</color>
+    <color name="light_gray4">#BCBCBC</color>
+    <color name="light_gray5">#F0F0F0</color>
 
 </resources>
