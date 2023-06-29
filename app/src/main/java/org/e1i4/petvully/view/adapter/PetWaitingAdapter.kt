@@ -3,13 +3,17 @@ package org.e1i4.petvully.view.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import org.e1i4.petvully.data.local.PetSoonData
 import org.e1i4.petvully.data.local.PetWaitingData
+import org.e1i4.petvully.data.remote.model.ResponsePetsInfoItem
 import org.e1i4.petvully.databinding.ItemPetsSoonBinding
 import org.e1i4.petvully.databinding.ItemPetsWaitingBinding
 
 class PetWaitingAdapter : RecyclerView.Adapter<PetWaitingAdapter.PetViewHolder>() {
-    var petList = mutableListOf<PetWaitingData>()
+    var petList = emptyList<ResponsePetsInfoItem>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -27,11 +31,21 @@ class PetWaitingAdapter : RecyclerView.Adapter<PetWaitingAdapter.PetViewHolder>(
 
     inner class PetViewHolder(private val binding: ItemPetsWaitingBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(data: PetWaitingData) {
+        fun onBind(data: ResponsePetsInfoItem) {
             binding.tvKind.text = data.kind
-            binding.tvSex.text = data.sex
-            binding.tvAge.text = data.age
-            binding.tvLocation.text = data.location
+            binding.tvSex.text = data.gender
+            binding.tvAgeData.text = data.age.toString()
+            binding.tvLocation.text = data.region
+
+            Glide.with(itemView)
+                .load(data.image)
+                .transform(CenterCrop(), RoundedCorners(20))
+                .into(binding.ivPet)
         }
+    }
+
+    fun setPetListData(petList: List<ResponsePetsInfoItem>) {
+        this.petList = petList.subList(4,9)
+        notifyDataSetChanged()
     }
 }

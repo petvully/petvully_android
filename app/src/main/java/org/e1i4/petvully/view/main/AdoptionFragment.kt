@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,11 +19,13 @@ import org.e1i4.petvully.view.adapter.PetSoonAdapter
 import org.e1i4.petvully.view.adapter.PetWaitingAdapter
 import org.e1i4.petvully.view.message.MessageActivity
 import org.e1i4.petvully.view.sign.SignInActivity
+import org.e1i4.petvully.view.viewmodel.PetInfoViewModel
 
 @AndroidEntryPoint
 class AdoptionFragment: BaseFragment<FragmentAdoptionBinding>(FragmentAdoptionBinding::inflate){
     private var petSoonAdapter = PetSoonAdapter()
     private var petWaitingAdapter = PetWaitingAdapter()
+    private val viewModel: PetInfoViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,37 +36,29 @@ class AdoptionFragment: BaseFragment<FragmentAdoptionBinding>(FragmentAdoptionBi
         _binding = FragmentAdoptionBinding.inflate(layoutInflater)
         initAdapter()
         setIntent()
+        initObserver()
+        viewModel.requestPetList()
 
         return binding.root
     }
 
     private fun initAdapter(){
         binding.rvPetsSoon.adapter = petSoonAdapter
-
-        petSoonAdapter.petList.addAll(
-            listOf(
-                PetSoonData("믹스견 ♂", "중성화 알 수 없음", "3살", "충청남도 홍성군"),
-                PetSoonData("코숏 ♂", "중성화 알 수 없음", "1살 미만", "충청남도 당진시"),
-                PetSoonData("믹스견 ♀", "중성화 알 수 없음", "1살 미만", "충청남도 서산시"),
-            )
-        )
-
-        petSoonAdapter.notifyDataSetChanged()
-
         binding.rvPetsWaiting.adapter = petWaitingAdapter
-        binding.rvPetsWaiting.layoutManager = GridLayoutManager(activity, 2)
-        petWaitingAdapter.petList.addAll(
-            listOf(
-                PetWaitingData("믹스견 ♂", "중성화 알 수 없음", "3살", "충청남도 홍성군"),
-                PetWaitingData("코숏 ♂", "중성화 알 수 없음", "1살 미만", "충청남도 당진시"),
-                PetWaitingData("믹스견 ♀", "중성화 알 수 없음", "1살 미만", "충청남도 서산시"),
-                PetWaitingData("믹스견 ♂", "중성화 알 수 없음", "3살", "충청남도 홍성군"),
-                PetWaitingData("코숏 ♂", "중성화 알 수 없음", "1살 미만", "충청남도 당진시"),
-                PetWaitingData("믹스견 ♀", "중성화 알 수 없음", "1살 미만", "충청남도 서산시"),
-            )
-        )
+    }
 
-        petSoonAdapter.notifyDataSetChanged()
+    private fun initObserver(){
+        viewModel.petList.observe(viewLifecycleOwner){ petList ->
+            with(binding.rvPetsSoon.adapter as PetSoonAdapter) {
+                setPetListData(petList)
+            }
+        }
+
+        viewModel.petList.observe(viewLifecycleOwner){ petList ->
+            with(binding.rvPetsWaiting.adapter as PetWaitingAdapter) {
+                setPetListData(petList)
+            }
+        }
     }
 
     private fun setIntent() {

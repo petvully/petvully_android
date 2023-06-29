@@ -2,6 +2,8 @@ package org.e1i4.petvully.data.remote
 
 import com.google.gson.JsonObject
 import org.e1i4.petvully.data.remote.model.PetRemote
+import org.e1i4.petvully.data.remote.model.ResponsePetsInfo
+import org.e1i4.petvully.data.remote.model.ResponsePetsInfoItem
 import org.e1i4.petvully.data.remote.model.UserAndPetRemote
 import org.e1i4.petvully.data.remote.model.UserRemote
 import retrofit2.http.Body
@@ -49,7 +51,7 @@ interface PVService {
     ): UserAndPetRemote
     @GET("pets/info")
     suspend fun petList(
-    ): List<UserAndPetRemote>
+    ): ResponsePetsInfo
     @GET("pets/info/{petId}")
     suspend fun petInfo(
         @Path("petId") petId:Int
