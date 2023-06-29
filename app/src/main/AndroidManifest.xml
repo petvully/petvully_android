@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <application
         android:name=".PVApplication"
@@ -12,7 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Petvully"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".view.donationDetail.DonationDetail2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".view.donationDetail.DonationDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".view.mypage.DonateCertificateActivity"
             android:exported="false" />

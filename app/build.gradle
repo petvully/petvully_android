@@ -78,10 +78,6 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     // gson
     implementation "com.google.code.gson:gson:$retrofitVersion"
-
     // logging
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
-
-    //oss
-    implementation 'com.google.android.gms:play-services-oss-licenses:17.0.0'
 }
