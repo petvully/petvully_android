@@ -1,17 +1,20 @@
 package org.e1i4.petvully.view.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import org.e1i4.petvully.R
 import org.e1i4.petvully.base.BaseFragment
 import org.e1i4.petvully.data.local.PetSoonData
 import org.e1i4.petvully.data.local.PetWaitingData
 import org.e1i4.petvully.databinding.FragmentAdoptionBinding
 import org.e1i4.petvully.view.adapter.PetSoonAdapter
 import org.e1i4.petvully.view.adapter.PetWaitingAdapter
+import org.e1i4.petvully.view.sign.SignInActivity
 
 @AndroidEntryPoint
 class AdoptionFragment: BaseFragment<FragmentAdoptionBinding>(FragmentAdoptionBinding::inflate){
@@ -26,6 +29,7 @@ class AdoptionFragment: BaseFragment<FragmentAdoptionBinding>(FragmentAdoptionBi
 
         _binding = FragmentAdoptionBinding.inflate(layoutInflater)
         initAdapter()
+        setIntent()
 
         return binding.root
     }
@@ -57,5 +61,21 @@ class AdoptionFragment: BaseFragment<FragmentAdoptionBinding>(FragmentAdoptionBi
         )
 
         petSoonAdapter.notifyDataSetChanged()
+    }
+
+    private fun setIntent() {
+        val fragment = AdoptionSearchFragment()
+
+        binding.etSearch.setOnClickListener{
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.add(R.id.main_fragment_container, fragment)?.commit()
+        }
+
+        /*
+        if(binding.etSearch.isPressed){
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.add(R.id.main_fragment_container, fragment)?.commit()
+        }
+        */
     }
 }
