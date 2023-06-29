@@ -1,5 +1,6 @@
 package org.e1i4.petvully.view.donationDetail
 
+import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
@@ -27,7 +28,11 @@ class DonationDetailActivity : BaseActivity<ActivityDonationDetailBinding>(Activ
 
         binding.include.root.background = ColorDrawable(resources.getColor(R.color.color_primary, null))
         binding.include.divider.background = ColorDrawable(resources.getColor(R.color.color_primary, null))
+        binding.include.give.setColorFilter(resources.getColor(R.color.white,null))
 
+        binding.include.give.setOnClickListener{
+            startActivity(Intent(this,DonationDetail2Activity::class.java).putExtra("data",data))
+        }
         binding.include.category.text = data.category
         binding.include.coin.text = "${data.price} 불리코인"
         binding.include.title.text = data.name

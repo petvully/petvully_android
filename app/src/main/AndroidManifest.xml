@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Petvully"
         tools:targetApi="31">
         <activity
+            android:name=".view.donationDetail.DonationDetail2Activity"
+            android:exported="false" />
+        <activity
             android:name=".view.donationDetail.DonationDetailActivity"
             android:exported="false" />
         <activity
