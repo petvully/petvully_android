@@ -3,19 +3,19 @@ package org.e1i4.petvully.view.mypage
 import android.content.Intent
 import android.os.Bundle
 import org.e1i4.petvully.base.BaseActivity
-import org.e1i4.petvully.databinding.ActivityCoinBinding
+import org.e1i4.petvully.databinding.ActivityRealAdoptBinding
 import org.e1i4.petvully.view.SettingActivity
 import org.e1i4.petvully.view.message.MessageActivity
 
-class CoinActivity : BaseActivity<ActivityCoinBinding>(ActivityCoinBinding::inflate) {
+class RealAdoptActivity : BaseActivity<ActivityRealAdoptBinding>(ActivityRealAdoptBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setIntent()
     }
 
-    private fun setIntent(){
-        binding.icBack.setOnClickListener{
+    private fun setIntent() {
+        binding.icBack.setOnClickListener {
             finish()
         }
 
@@ -26,5 +26,6 @@ class CoinActivity : BaseActivity<ActivityCoinBinding>(ActivityCoinBinding::infl
         binding.icMsg.setOnClickListener {
             startActivity(Intent(this, MessageActivity::class.java))
         }
+
     }
 }
