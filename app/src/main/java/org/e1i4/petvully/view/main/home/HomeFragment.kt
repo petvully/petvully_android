@@ -151,7 +151,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
         binding.background.viewTreeObserver.addOnGlobalLayoutListener {
             val transfer = TransferPosition(
-                Point(382, 714),
+                Point(990, 1556),
                 Point(binding.background.width, binding.background.height)
             )
             vm.setHomeArea(
@@ -160,11 +160,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                         true,
                         0,
                         listOf(
-                            transfer.toViewPoint(Point(233, 372)),
-                            transfer.toViewPoint(Point(0, 541)),
-                            transfer.toViewPoint(Point(0, 700)),
-                            transfer.toViewPoint(Point(382, 70)),
-                            transfer.toViewPoint(Point(382, 514)),
+                            transfer.toViewPoint(Point(0,1270)),
+                            transfer.toViewPoint(Point(0, 1556)),
+                            transfer.toViewPoint(Point(990, 1556)),
+                            transfer.toViewPoint(Point(980, 980)),
+                            transfer.toViewPoint(Point(429,630)),
+                        )
+                    ),
+                    HomeArea(
+                        true,
+                        1,
+                        listOf(
+                            transfer.toViewPoint(Point(390,655)),
+                            transfer.toViewPoint(Point(621,767)),
+                            transfer.toViewPoint(Point(913,711)),
+                            transfer.toViewPoint(Point(645,524)),
                         )
                     )
                 )
