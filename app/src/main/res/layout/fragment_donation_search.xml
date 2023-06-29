@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.main.AdoptionFragment">
+    tools:context=".view.main.DonationSearchFragment">
 
     <ImageView
         android:id="@+id/ic_back"
@@ -23,7 +23,7 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/notosanskr_medium"
         android:includeFontPadding="false"
-        android:text="@string/adoption_title"
+        android:text="기부불리"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +79,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/notosanskr_bold"
                 android:includeFontPadding="false"
-                android:text="@string/adoption_find"
+                android:text="지금 보호소에 필요한 것은 💌"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -129,86 +129,73 @@
                 app:layout_constraintTop_toTopOf="@+id/et_search" />
 
             <TextView
-                android:id="@+id/tv_title_soon"
+                android:id="@+id/tv_hashtag1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/notosanskr_bold"
-                android:includeFontPadding="false"
-                android:text="@string/adoption_title1"
+                android:layout_marginTop="33dp"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="# 대용량 패드     # 천연펫샴푸     # 물티슈"
+                app:layout_constraintStart_toStartOf="@id/et_search"
                 app:layout_constraintTop_toBottomOf="@+id/et_search" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_pets_soon"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/tv_hashtag2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginHorizontal="19dp"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title_soon"
-                tools:itemCount="4"
-                tools:listitem="@layout/item_pets_soon" />
+                android:layout_marginTop="13dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="# 닭가슴살 간식     # 강아지 사료"
+                app:layout_constraintStart_toStartOf="@id/et_search"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hashtag1" />
 
             <TextView
-                android:id="@+id/tv_title_waiting"
+                android:id="@+id/tv_explanation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="25dp"
-                android:fontFamily="@font/notosanskr_bold"
+                android:layout_marginTop="43dp"
+                android:textColor="@color/light_gray4"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanskr_medium"
                 android:includeFontPadding="false"
-                android:text="@string/adoption_title2"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_pets_soon" />
+                android:lineSpacingExtra="10dp"
+                android:text="@string/donate"
+                app:layout_constraintStart_toStartOf="@id/et_search"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hashtag2" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
+                android:id="@+id/tv_explanation2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="27dp"
-                android:background="@drawable/bg_round_pink"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_title_waiting"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_title_waiting">
+                android:layout_marginTop="10dp"
+                android:textColor="@color/light_gray4"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="10dp"
+                android:text="사지말고 입양말고 먼저 불러 보세요"
+                app:layout_constraintStart_toStartOf="@id/et_search"
+                app:layout_constraintTop_toBottomOf="@+id/tv_explanation" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="28dp"
-                    android:layout_marginVertical="2dp"
-                    android:fontFamily="@font/notosanskr_regular"
-                    android:includeFontPadding="false"
-                    android:text="@string/adoption_my_location"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_pets_waiting"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/tv_explanation3"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="4dp"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title_waiting"
-                tools:listitem="@layout/item_pets_waiting" />
-
-
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="10dp"
+                android:text="펫불리"
+                android:textColor="@color/color_primary"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/tv_explanation2"
+                app:layout_constraintTop_toTopOf="@+id/tv_explanation2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

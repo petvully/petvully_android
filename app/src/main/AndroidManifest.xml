@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <application
         android:name=".PVApplication"
@@ -21,6 +19,33 @@
             android:exported="false" />
         <activity
             android:name=".view.donationDetail.DonationDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.mypage.DonateCertificateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.mypage.DonateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.mypage.RealAdoptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.mypage.AdoptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.mypage.ChargingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.mypage.CoinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.mypage.ChargeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.message.MessageActivity"
             android:exported="false" />
         <activity
             android:name=".view.SplashActivity"
