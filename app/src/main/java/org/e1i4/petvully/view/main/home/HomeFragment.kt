@@ -1,6 +1,7 @@
 package org.e1i4.petvully.view.main.home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Point
 import android.graphics.Typeface
 import android.os.Bundle
@@ -23,6 +24,9 @@ import org.e1i4.petvully.base.BaseFragment
 import org.e1i4.petvully.data.local.model.HomeArea
 import org.e1i4.petvully.databinding.FragmentHomeBinding
 import org.e1i4.petvully.util.helper.home.TransferPosition
+import org.e1i4.petvully.view.SettingActivity
+import org.e1i4.petvully.view.main.AdoptionSearchFragment
+import org.e1i4.petvully.view.message.MessageActivity
 
 
 @AndroidEntryPoint
@@ -41,7 +45,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         setSurfaceView()
         setClick()
         setHomeArea()
+        setIntent()
         return binding.root
+    }
+
+    private fun setIntent() {
+
+        binding.menuHeart.setOnClickListener {
+            startActivity(Intent(context, MessageActivity::class.java))
+        }
+
+        binding.menuMenu.setOnClickListener {
+            startActivity(Intent(context, SettingActivity::class.java))
+        }
+
     }
 
     private fun setView(){

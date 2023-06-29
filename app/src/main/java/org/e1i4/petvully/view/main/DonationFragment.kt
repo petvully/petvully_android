@@ -18,7 +18,9 @@ import org.e1i4.petvully.base.BaseFragment
 import org.e1i4.petvully.data.remote.model.DonationGoods
 import org.e1i4.petvully.databinding.FragmentDonationBinding
 import org.e1i4.petvully.databinding.RowDonationBinding
+import org.e1i4.petvully.view.SettingActivity
 import org.e1i4.petvully.view.donationDetail.DonationDetailActivity
+import org.e1i4.petvully.view.message.MessageActivity
 
 
 @AndroidEntryPoint
@@ -37,8 +39,21 @@ class DonationFragment : BaseFragment<FragmentDonationBinding>(FragmentDonationB
         binding.rvDonation.adapter = donationAdapter
 
         mockData()
+        setIntent()
         return binding.root
     }
+
+    private fun setIntent() {
+        binding.icHeart.setOnClickListener {
+            startActivity(Intent(context, MessageActivity::class.java))
+        }
+
+        binding.icMenu.setOnClickListener {
+            startActivity(Intent(context, SettingActivity::class.java))
+        }
+
+    }
+
     fun mockData(){
         donationAdapter.setData(
             listOf(
