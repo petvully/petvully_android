@@ -1,5 +1,6 @@
 package org.e1i4.petvully.data.remote
 
+import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import org.e1i4.petvully.data.remote.model.PetRemote
 import org.e1i4.petvully.data.remote.model.UserAndPetRemote
@@ -36,7 +37,7 @@ interface PVService {
     @GET("quests/info/{userId}")
     suspend fun questInfo(
         @Path("userId") userId:Int
-    ): JsonObject
+    ): List<JsonObject>
 
     /** 유기 동물 */
     @POST("pets/adoption")
