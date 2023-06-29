@@ -32,5 +32,13 @@
     <string name="sign_up_check">중복확인</string>
     <string name="sign_up_register">가입하기</string>
 
+    <!-- adoption -->
+    <string name="adoption_title">분양불리</string>
+    <string name="adoption_find">내 주변 펫불리를 찾아 보세요 ❣</string>
+    <string name="adoption_search">검색해주세요.</string>
+    <string name="adoption_title1">입양공고 날짜가 얼마 남지 않았어요 😢</string>
+    <string name="adoption_title2">집사님을 기다리고 있어요 🙌🏻</string>
+    <string name="adoption_my_location">내위치</string>
+
 
 </resources>
