@@ -12,6 +12,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     val homeFragment = HomeFragment()
     val adoptionFragment = AdoptionFragment()
     val donationFragment = DonationFragment()
+    val mypageFragment = MypageFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,16 +26,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             add(R.id.main_fragment_container, homeFragment)
             add(R.id.main_fragment_container, adoptionFragment)
             add(R.id.main_fragment_container, donationFragment)
+            add(R.id.main_fragment_container, mypageFragment)
             commit()
         }
         replaceFragment(homeFragment)
     }
     private fun setNavigation(){
+        binding.bottomNavigation.itemActiveIndicatorColor = null;
         binding.bottomNavigation.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.menu_main_bottom_home -> replaceFragment(homeFragment)
                 R.id.menu_main_bottom_adoption -> replaceFragment(adoptionFragment)
                 R.id.menu_main_bottom_donation -> replaceFragment(donationFragment)
+                R.id.menu_main_bottom_mypage -> replaceFragment(mypageFragment)
                 else -> return@setOnItemSelectedListener false
             }
             return@setOnItemSelectedListener true
@@ -45,6 +49,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             hide(homeFragment)
             hide(adoptionFragment)
             hide(donationFragment)
+            hide(mypageFragment)
             show(fragment)
             commit()
         }
