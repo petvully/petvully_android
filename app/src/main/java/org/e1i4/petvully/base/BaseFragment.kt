@@ -15,7 +15,7 @@ abstract class BaseFragment<T : ViewBinding>(
     private val bindingInflater: (layoutInflater: LayoutInflater) -> T
 ) : Fragment(), View.OnClickListener {
 
-    private var _binding: T? = null
+    var _binding: T? = null
     protected val binding get() = _binding!!
 
     override fun onCreateView(

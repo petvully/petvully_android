@@ -1,14 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.main.AdoptionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="adoption" />
+    <ImageView
+        android:id="@+id/ic_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:includeFontPadding="false"
+        android:text="@string/adoption_title"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ic_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_msg"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+        app:layout_constraintEnd_toStartOf="@+id/ic_menu"
+        app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+    <ImageView
+        android:id="@+id/ic_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/light_gray2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_title_find"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:text="@string/adoption_find"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="27dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_round_light_gray"
+                android:elevation="1dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:hint="@string/adoption_search"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:padding="13dp"
+                android:paddingStart="53dp"
+                android:singleLine="true"
+                android:textColorHint="@color/light_gray4"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_find" />
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:elevation="1dp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="@+id/et_search"
+                app:layout_constraintStart_toStartOf="@+id/et_search"
+                app:layout_constraintTop_toTopOf="@+id/et_search" />
+
+            <ImageView
+                android:id="@+id/iv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13dp"
+                android:elevation="1dp"
+                android:src="@drawable/ic_cancel"
+                app:layout_constraintBottom_toBottomOf="@+id/et_search"
+                app:layout_constraintEnd_toEndOf="@+id/et_search"
+                app:layout_constraintTop_toTopOf="@+id/et_search" />
+
+            <TextView
+                android:id="@+id/tv_title_soon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:text="@string/adoption_title1"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_search" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_pets_soon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="19dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_soon"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_pets_soon" />
+
+            <TextView
+                android:id="@+id/tv_title_waiting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:text="@string/adoption_title2"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_pets_soon" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="27dp"
+                android:background="@drawable/bg_round_pink"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_waiting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_title_waiting">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="28dp"
+                    android:layout_marginVertical="2dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/adoption_my_location"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_pets_waiting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_waiting"
+                tools:listitem="@layout/item_pets_waiting" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
