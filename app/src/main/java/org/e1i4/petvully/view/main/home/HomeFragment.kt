@@ -10,6 +10,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
+import android.widget.ImageView
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
 import org.e1i4.petvully.base.BaseFragment
@@ -21,6 +22,7 @@ import org.e1i4.petvully.util.helper.home.TransferPosition
 @AndroidEntryPoint
 class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate){
     private val vm: HomeViewModel by activityViewModels()
+    private lateinit var fabs:List<ImageView>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,17 +30,34 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
+        fabs = listOf(
+            binding.fabWater,
+            binding.fabFeed,
+            binding.fabTouch,
+            binding.fabShower,
+            binding.fabWalk,
+        )
         setSurfaceView()
-
+        setClick()
         setHomeArea()
-
-
-
-
         return binding.root
     }
 
+    private fun setClick(){
+        binding.fabPlus.setOnClickListener{
+            if(it.rotation == 0f){
+                it.rotation = 45f
+                for(fag in fabs){
 
+                }
+            }else{
+                it.rotation = 0f
+                for(fag in fabs){
+
+                }
+            }
+        }
+    }
     private fun setSurfaceView(){
 //        binding.homeSurfaceView.apply {
 //            holder.addCallback(this)

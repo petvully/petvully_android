@@ -2,16 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_main_bottom_home"
-        android:icon="@android:drawable/ic_btn_speak_now"
-        android:title="home" />
-
-    <item
-        android:id="@+id/menu_main_bottom_donation"
-        android:icon="@android:drawable/ic_btn_speak_now"
-        android:title="donation" />
+        android:icon="@drawable/ic_home"
+        android:title="@string/bottom_nav_home" />
 
     <item
         android:id="@+id/menu_main_bottom_adoption"
-        android:icon="@android:drawable/ic_btn_speak_now"
-        android:title="adoption" />
+        android:icon="@drawable/ic_adopt"
+        android:title="@string/bottom_nav_adopt" />
+
+    <item
+        android:id="@+id/menu_main_bottom_donation"
+        android:icon="@drawable/ic_donate"
+        android:title="@string/bottom_nav_donate" />
+
+    <item
+        android:id="@+id/menu_main_bottom_mypage"
+        android:icon="@drawable/ic_mypage"
+        android:title="@string/bottom_nav_mypage" />
 </menu>
