@@ -65,17 +65,10 @@ class AdoptionFragment: BaseFragment<FragmentAdoptionBinding>(FragmentAdoptionBi
 
     private fun setIntent() {
         val fragment = AdoptionSearchFragment()
-
+        binding.etSearch.isFocusable = false
         binding.etSearch.setOnClickListener{
             activity?.supportFragmentManager?.beginTransaction()
                 ?.add(R.id.main_fragment_container, fragment)?.commit()
         }
-
-        /*
-        if(binding.etSearch.isPressed){
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.add(R.id.main_fragment_container, fragment)?.commit()
-        }
-        */
     }
 }
