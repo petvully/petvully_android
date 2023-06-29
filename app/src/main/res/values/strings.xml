@@ -41,7 +41,6 @@
     <string name="adoption_my_location">내위치</string>
 
 
-
     <!-- home -->
     <string name="home_appbar_hello">안녕하세요\n%s 집사님!</string>
     <string name="home_appbar_subtitle">오늘의 펫불리기가 있어요</string>

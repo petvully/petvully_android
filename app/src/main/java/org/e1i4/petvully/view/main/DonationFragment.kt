@@ -1,5 +1,6 @@
 package org.e1i4.petvully.view.main
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,6 +18,7 @@ import org.e1i4.petvully.base.BaseFragment
 import org.e1i4.petvully.data.remote.model.DonationGoods
 import org.e1i4.petvully.databinding.FragmentDonationBinding
 import org.e1i4.petvully.databinding.RowDonationBinding
+import org.e1i4.petvully.view.donationDetail.DonationDetailActivity
 
 
 @AndroidEntryPoint
@@ -30,7 +32,7 @@ class DonationFragment : BaseFragment<FragmentDonationBinding>(FragmentDonationB
         super.onCreateView(inflater, container, savedInstanceState)
         donationAdapter = DonationAdapter()
         donationAdapter.onClickListener = {
-            Toast.makeText(requireContext(), "click!",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(requireContext(),DonationDetailActivity::class.java).putExtra("data",it))
         }
         binding.rvDonation.adapter = donationAdapter
 
@@ -97,7 +99,7 @@ class DonationAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(){
                 .load(data.imageUrl)
                 .apply(requestOptions)
                 .into(binding.img)
-            binding.give.setOnClickListener{
+            binding.root.setOnClickListener{
                 onClickListener?.invoke(data)
             }
         }
