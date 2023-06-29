@@ -78,7 +78,7 @@ class AdoptionFragment: BaseFragment<FragmentAdoptionBinding>(FragmentAdoptionBi
             startActivity(Intent(context, SettingActivity::class.java))
         }
 
-        binding.icHeart.setOnClickListener {
+        binding.icMsg.setOnClickListener {
             startActivity(Intent(context, MessageActivity::class.java))
         }
 

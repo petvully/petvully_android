@@ -15,7 +15,14 @@ class MessageActivity  : BaseActivity<ActivityMessageBinding>(ActivityMessageBin
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setIntent()
         initAdapter()
+    }
+
+    private fun setIntent() {
+        binding.icBack.setOnClickListener {
+            finish()
+        }
     }
 
     private fun initAdapter(){
