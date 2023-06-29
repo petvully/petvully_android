@@ -21,6 +21,6 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>(ActivitySettingBind
         binding.icBack.setOnClickListener {
             finish()
         }
-        
+
     }
 }
