@@ -18,14 +18,12 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>(ActivitySignInBinding
     private fun setIntent(){
         binding.btnLogin.setOnClickListener{
             // 임시로 main 이동
-            Log.d("click", "login")
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
         binding.tvSignUp.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
-            finish()
         }
     }
 }
