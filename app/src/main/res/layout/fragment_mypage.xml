@@ -153,6 +153,7 @@
                     app:layout_constraintTop_toTopOf="@+id/textView2" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_charge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="14dp"
