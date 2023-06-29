@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,39 +20,83 @@
         android:id="@+id/dog"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_gravity="start|top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:src="@color/color_primary"/>
     <LinearLayout
+        android:id="@+id/home_appbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp">
+        android:padding="20dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/tv_appbar_title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:bufferType="spannable"
+                android:layout_weight="1"
+                android:lineSpacingExtra="-6dp"
+                android:textSize="24sp"
+                android:layout_marginBottom="10dp"/>
             <ImageView
                 android:id="@+id/menu_heart"
                 android:layout_width="38dp"
                 android:layout_height="32dp"
-                android:src="@drawable/test"/>
+                android:src="@drawable/ic_heart"
+                android:layout_marginEnd="8dp"/>
             <ImageView
                 android:id="@+id/menu_menu"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/test"/>
+                android:src="@drawable/ic_menu"/>
         </LinearLayout>
         <TextView
             android:id="@+id/tv_appbar_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:paddingBottom="30dp"/>
+            android:bufferType="spannable"
+            android:textSize="18sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/home_appbar_layout"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="5dp">
+        <TextView
+            android:id="@+id/home_current_level"
+            android:textSize="38dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"/>
+        <ProgressBar
+            android:id="@+id/home_level_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/progress_level"
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="6dp"/>
+        <TextView
+            android:id="@+id/home_next_level"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"/>
     </LinearLayout>
     <ImageView
         android:id="@+id/fab_water"
@@ -61,8 +105,11 @@
         android:padding="10dp"
         android:layout_margin="15dp"
         android:background="@drawable/background_circle"
-        android:layout_gravity="bottom|center"
-        android:src="@drawable/ic_water"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_water"
+        android:elevation="7dp"/>
     <ImageView
         android:id="@+id/fab_feed"
         android:layout_width="62dp"
@@ -70,8 +117,11 @@
         android:padding="10dp"
         android:layout_margin="15dp"
         android:background="@drawable/background_circle"
-        android:layout_gravity="bottom|center"
-        android:src="@drawable/ic_feed"/>
+                app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_feed"
+        android:elevation="7dp"/>
     <ImageView
         android:id="@+id/fab_touch"
         android:layout_width="62dp"
@@ -81,8 +131,11 @@
         android:paddingEnd="6.5dp"
         android:layout_margin="15dp"
         android:background="@drawable/background_circle"
-        android:layout_gravity="bottom|center"
-        android:src="@drawable/ic_touch"/>
+                app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_touch"
+        android:elevation="7dp"/>
     <ImageView
         android:id="@+id/fab_shower"
         android:layout_width="62dp"
@@ -90,8 +143,11 @@
         android:padding="10dp"
         android:layout_margin="15dp"
         android:background="@drawable/background_circle"
-        android:layout_gravity="bottom|center"
-        android:src="@drawable/ic_shower"/>
+                app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_shower"
+        android:elevation="7dp"/>
     <ImageView
         android:id="@+id/fab_walk"
         android:layout_width="62dp"
@@ -101,14 +157,20 @@
         android:paddingStart="7dp"
         android:layout_margin="15dp"
         android:background="@drawable/background_circle"
-        android:layout_gravity="bottom|center"
-        android:src="@drawable/ic_walk"/>
+                app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_walk"
+        android:elevation="7dp"/>
     <ImageView
         android:id="@+id/fab_plus"
         android:layout_width="62dp"
         android:layout_height="62dp"
         android:layout_margin="15dp"
         android:backgroundTint="@color/color_primary"
-        android:layout_gravity="bottom|center"
-        android:src="@drawable/ic_plus"/>
-</FrameLayout>
+                app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_plus"
+        android:elevation="7dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

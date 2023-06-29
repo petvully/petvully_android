@@ -21,7 +21,8 @@
         app:itemIconTint="@drawable/selector_main_bottom"
         app:itemTextColor="@drawable/selector_main_bottom"
         app:labelVisibilityMode="labeled"
+        app:itemRippleColor="@null"
         android:background="@drawable/background_rounded_top"
-        app:menu="@menu/menu_main_bottom"/>
+        app:menu="@menu/menu_main_bottom" />
 
 </LinearLayout>
