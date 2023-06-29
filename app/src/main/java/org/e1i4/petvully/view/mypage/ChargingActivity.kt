@@ -1,11 +1,10 @@
 package org.e1i4.petvully.view.mypage
 
-import android.content.Intent
 import android.os.Bundle
 import org.e1i4.petvully.base.BaseActivity
-import org.e1i4.petvully.databinding.ActivityChargeBinding
+import org.e1i4.petvully.databinding.ActivityChargingBinding
 
-class ChargeActivity : BaseActivity<ActivityChargeBinding>(ActivityChargeBinding::inflate) {
+class ChargingActivity : BaseActivity<ActivityChargingBinding>(ActivityChargingBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -15,10 +14,6 @@ class ChargeActivity : BaseActivity<ActivityChargeBinding>(ActivityChargeBinding
     private fun setIntent(){
         binding.icBack.setOnClickListener{
             finish()
-        }
-
-        binding.btnCharge.setOnClickListener {
-            startActivity(Intent(this, ChargingActivity::class.java))
         }
     }
 }
