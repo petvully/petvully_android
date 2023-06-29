@@ -25,4 +25,9 @@ class HomeViewModel @Inject constructor(): ViewModel() {
             }
         }
     }
+
+    fun goNear(dog: View, btmViewHeight:Int, ){
+
+    }
+
 }

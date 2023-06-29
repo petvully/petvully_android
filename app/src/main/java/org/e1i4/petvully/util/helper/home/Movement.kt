@@ -24,17 +24,17 @@ class Movement(private val moveArea: List<HomeArea>) {
     fun goToPosition(dog: View, position: Point){
         movementJob.cancel()
         movementJob = CoroutineScope(Dispatchers.Default).launch {
-//            x_step = (x_end - x_start) / frames
-//            y_step = (y_end - y_start) / frames
-//            while(){
-//
-//            }
-            delay(FPS.toLong())
+            var xStep = ((position.x - dog.x) / SPEED).toInt()
+            var yStep = ((position.y - dog.y) / SPEED).toInt()
+            while(moveArea.all { it.available &&(it.isInside(Point(xStep,yStep))) }){
+                dog.x += xStep
+                dog.y += yStep
+                xStep = ((position.x - dog.x) / SPEED).toInt()
+                yStep = ((position.y - dog.y) / SPEED).toInt()
+                Log.d("asd", "x $xStep  y $yStep")
+                delay(FPS.toLong())
+            }
         }
-    }
-
-    fun goNear(){
-
     }
 
     fun goFar(){
