@@ -48,4 +48,19 @@
     <string name="home_appbar_hello">안녕하세요\n%s 집사님!</string>
     <string name="home_appbar_subtitle">오늘의 펫불리기가 있어요</string>
 
+
+
+    <string-array name="home_chat_before">
+        <item>반가워요 집사 🐾</item>
+        <item>쓰다듬어 주세요👋🏻</item>
+        <item>꼬질꼬질 냄새가 나요💩</item>
+    </string-array>
+    <string-array name="home_chat_ing">
+        <item>쓰담 쓰담 ..💞</item>
+        <item>뽀득뽀글 뽀득뽀글🧼</item>
+    </string-array>
+    <string-array name="home_chat_after">
+        <item>너무 행복해요 ❣</item>
+    </string-array>
+
 </resources>
