@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -15,99 +16,84 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_kind_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/notosanskr_medium"
-        android:textSize="11sp"
-        android:textColor="@color/color_text_black"
-        android:includeFontPadding="false"
-        app:layout_constraintTop_toBottomOf="@+id/iv_pet_soon"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="🐶"/>
 
     <TextView
         android:id="@+id/tv_kind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:fontFamily="@font/notosanskr_medium"
-        android:includeFontPadding="false"
-        android:textSize="11sp"
-        android:textColor="@color/color_text_black"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_kind_icon"
-        app:layout_constraintStart_toEndOf="@+id/tv_kind_icon"
-        app:layout_constraintTop_toTopOf="@+id/tv_kind_icon" />
-
-    <TextView
-        android:id="@+id/tv_sex_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="15dp"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/notosanskr_medium"
-        android:textSize="11sp"
+        android:textSize="16sp"
         android:textColor="@color/color_text_black"
         android:includeFontPadding="false"
-        app:layout_constraintTop_toBottomOf="@+id/tv_kind_icon"
+        app:layout_constraintTop_toBottomOf="@+id/iv_pet_soon"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="❎"/>
+        tools:text="품종"/>
 
     <TextView
-        android:id="@+id/tv_sex"
+        android:id="@+id/tv_age_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="10dp"
         android:fontFamily="@font/notosanskr_medium"
         android:includeFontPadding="false"
-        android:textSize="11sp"
         android:textColor="@color/color_text_black"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_sex_icon"
-        app:layout_constraintStart_toEndOf="@+id/tv_sex_icon"
-        app:layout_constraintTop_toTopOf="@+id/tv_sex_icon" />
-
-    <TextView
-        android:id="@+id/tv_age_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="7dp"
-        android:fontFamily="@font/notosanskr_medium"
-        android:includeFontPadding="false"
-        android:text="✅"
-        android:textColor="@color/color_text_black"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sex_icon" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_kind"
+        app:layout_constraintStart_toEndOf="@+id/tv_kind"
+        app:layout_constraintTop_toTopOf="@+id/tv_kind"
+        tools:text="1" />
 
     <TextView
         android:id="@+id/tv_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:fontFamily="@font/notosanskr_medium"
         android:includeFontPadding="false"
-        android:textSize="11sp"
         android:textColor="@color/color_text_black"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_age_icon"
-        app:layout_constraintStart_toEndOf="@+id/tv_age_icon"
-        app:layout_constraintTop_toTopOf="@+id/tv_age_icon" />
+        android:textSize="16sp"
+        android:text="살"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_age_data"
+        app:layout_constraintStart_toEndOf="@+id/tv_age_data"
+        app:layout_constraintTop_toTopOf="@+id/tv_age_data"/>
+
+    <TextView
+        android:id="@+id/tv_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:includeFontPadding="false"
+        android:textColor="@color/color_text_black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_age"
+        app:layout_constraintStart_toEndOf="@+id/tv_age"
+        app:layout_constraintTop_toTopOf="@+id/tv_age"
+        tools:text="성별" />
 
     <TextView
         android:id="@+id/tv_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/notosanskr_medium"
         android:includeFontPadding="false"
         android:textColor="@color/color_text_black"
-        android:textSize="8sp"
-        app:layout_constraintEnd_toEndOf="@+id/iv_pet_soon"
-        app:layout_constraintTop_toTopOf="@+id/tv_kind_icon" />
+        android:textSize="13sp"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="@+id/tv_kind"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kind"
+        tools:text="지역" />
 
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_heart"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_sex" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
