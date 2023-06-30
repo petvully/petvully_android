@@ -57,16 +57,14 @@ class DonationFragment : BaseFragment<FragmentDonationBinding>(FragmentDonationB
     fun mockData(){
         donationAdapter.setData(
             listOf(
-                DonationGoods("https://picsum.photos/200","배변패드","요요쉬",100),
-                DonationGoods("https://picsum.photos/200","배변패드","요요쉬",100),
-                DonationGoods("https://picsum.photos/200","배변패드","요요쉬",100),
-                DonationGoods("https://picsum.photos/200","배변패드","요요쉬",100),
-                DonationGoods("https://picsum.photos/200","배변패드","요요쉬",100),
-                DonationGoods("https://picsum.photos/200","배변패드","요요쉬",100),
-                DonationGoods("https://picsum.photos/200","배변패드","요요쉬",100),
-                DonationGoods("https://picsum.photos/200","배변패드","요요쉬",100),
-                DonationGoods("https://picsum.photos/200","배변패드","요요쉬",100),
-                DonationGoods("https://picsum.photos/200","배변패드","요요쉬",100),
+                DonationGoods("https://github.com/CareSpoon/CareSpoon_Android/assets/63237214/a96f336c-30c0-4650-9287-087eca3e7cdc","배변패드","요요쉬",50),
+                DonationGoods("https://github.com/CareSpoon/CareSpoon_Android/assets/63237214/0e4fe2bc-47d1-4472-be79-51e3993ddb4d","배변패드","정직한 패드 100매",100),
+                DonationGoods("https://github.com/CareSpoon/CareSpoon_Android/assets/63237214/43e46d4e-6e61-440a-a027-b73492c0fb21","펫 사료","로얄캐닌 3kg",300),
+                DonationGoods("https://github.com/CareSpoon/CareSpoon_Android/assets/63237214/e7705622-e2f7-45a9-ad36-8734d1f069ec","펫 간식","시저캔",20),
+                DonationGoods("https://github.com/CareSpoon/CareSpoon_Android/assets/63237214/a96f336c-30c0-4650-9287-087eca3e7cdc","배변패드","요요쉬",50),
+                DonationGoods("https://github.com/CareSpoon/CareSpoon_Android/assets/63237214/0e4fe2bc-47d1-4472-be79-51e3993ddb4d","배변패드","정직한 패드 100매",100),
+                DonationGoods("https://github.com/CareSpoon/CareSpoon_Android/assets/63237214/43e46d4e-6e61-440a-a027-b73492c0fb21","펫 사료","로얄캐닌 3kg",300),
+                DonationGoods("https://github.com/CareSpoon/CareSpoon_Android/assets/63237214/e7705622-e2f7-45a9-ad36-8734d1f069ec","펫 간식","시저캔",20),
             )
         )
     }

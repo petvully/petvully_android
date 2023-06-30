@@ -6,9 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import org.e1i4.petvully.R
-import org.e1i4.petvully.data.local.PetSoonData
-import org.e1i4.petvully.data.remote.model.ResponsePetsInfo
 import org.e1i4.petvully.data.remote.model.ResponsePetsInfoItem
 import org.e1i4.petvully.databinding.ItemPetsSoonBinding
 
