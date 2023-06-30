@@ -6,7 +6,9 @@ import org.e1i4.petvully.data.remote.model.PetRemote
 import org.e1i4.petvully.data.remote.model.UserAndPetRemote
 import org.e1i4.petvully.data.remote.model.UserRemote
 import retrofit2.http.Body
+import retrofit2.http.Field
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
@@ -15,12 +17,13 @@ import retrofit2.http.Query
 interface PVService {
     /** 퀘스트 */
     @POST("quests/give-water")
+    @Headers("Content-type: application/json")
     suspend fun giveWater(
-        @Body userId:Int
+        @Query("userId") userId:Int
     ):UserRemote
     @POST("quests/give-walk")
     suspend fun giveWalk(
-        @Body userId:Int
+        @Field("userId") userId:Int
     ):UserRemote
     @POST("quests/give-touch")
     suspend fun giveTouch(
